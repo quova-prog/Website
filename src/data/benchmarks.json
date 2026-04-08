@@ -1,0 +1,36 @@
+{
+  "volatility": {
+    "EUR": 0.07,
+    "GBP": 0.08,
+    "JPY": 0.09,
+    "CAD": 0.06,
+    "AUD": 0.09,
+    "CHF": 0.06,
+    "CNY": 0.05,
+    "HKD": 0.01,
+    "SGD": 0.03,
+    "INR": 0.05,
+    "KRW": 0.10,
+    "MXN": 0.14,
+    "BRL": 0.18,
+    "Other": 0.10
+  },
+  "efficiency_gap": {
+    "Manufacturing":               0.85,
+    "Technology":                  0.80,
+    "Healthcare & Life Sciences":  0.78,
+    "Consumer Goods & Retail":     0.82,
+    "Energy & Resources":          0.88,
+    "Financial Services":          0.75,
+    "Other":                       0.80
+  },
+  "efficiency_ranges": {
+    "Manufacturing":               { "low": 80, "high": 92 },
+    "Technology":                  { "low": 75, "high": 88 },
+    "Healthcare & Life Sciences":  { "low": 72, "high": 85 },
+    "Consumer Goods & Retail":     { "low": 78, "high": 90 },
+    "Energy & Resources":          { "low": 82, "high": 94 },
+    "Financial Services":          { "low": 70, "high": 83 },
+    "Other":                       { "low": 75, "high": 88 }
+  }
+}
