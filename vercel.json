@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/ClientPortal/:path*",
-      "destination": "https://orbit-mvp-eta.vercel.app/ClientPortal/:path*"
+      "destination": "https://orbit-mvp-eta.vercel.app/:path*"
     },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
