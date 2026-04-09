@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 const DEMO_CALENDLY_URL = 'https://calendly.com/quovaos/demo' // Replace with live URL
+const FORMSPREE_URL = 'https://formspree.io/f/mbdpvlzb'
 
 function PageHeader() {
   return (
@@ -23,16 +24,31 @@ function PageHeader() {
 
 function DemoSection() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '', email: '', company: '', revenue: '', erps: '', message: '',
   })
 
   const update = key => e => setForm(f => ({ ...f, [key]: e.target.value }))
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    // TODO: wire to backend / CRM
-    setSubmitted(true)
+    setSubmitting(true)
+    setError('')
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Request failed')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please email steve@quovaos.com directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -150,8 +166,16 @@ function DemoSection() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full justify-center py-4 text-base">
-                Request Demo →
+              {error && (
+                <p className="text-red-500 text-sm text-center">{error}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="btn-primary w-full justify-center py-4 text-base disabled:opacity-60"
+              >
+                {submitting ? 'Sending…' : 'Request Demo →'}
               </button>
 
               <p className="text-xs text-orbit-gray text-center">
