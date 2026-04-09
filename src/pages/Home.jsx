@@ -489,73 +489,123 @@ function SocialProof() {
 }
 
 /* ─────────────────────────────────────────────
-   FOR BANK PARTNERS
+   BUILT FOR ENTERPRISE
 ───────────────────────────────────────────── */
-function BankPartners() {
+function BuiltForEnterprise() {
   const [ref, visible] = useInView()
 
-  const flywheel = [
-    { step: '01', title: 'Bank Refers', desc: 'RM introduces Quova to corporate treasury client to solve their visibility gap' },
-    { step: '02', title: 'Client Activates', desc: 'Quova surfaces unhedged exposure — client sees the gap for the first time' },
-    { step: '03', title: 'Hedging Increases', desc: 'Better-informed client hedges more frequently — executing through the bank' },
-    { step: '04', title: 'Bank Earns More', desc: 'More FX flow to desk, stickier relationship — bank refers more clients' },
+  const capabilities = [
+    {
+      icon: <ERPIcon />,
+      title: 'Multi-ERP Integration',
+      desc: 'Native connectors for SAP S/4HANA, Oracle ERP Cloud, and NetSuite. Continuous API sync — no batch jobs, no stale data.',
+    },
+    {
+      icon: <NeutralIcon />,
+      title: 'Execution-Neutral',
+      desc: 'Trade with any bank, any counterparty. Quova never restricts where you execute — best price, always.',
+    },
+    {
+      icon: <SecurityIcon />,
+      title: 'Enterprise Security',
+      desc: 'SOC 2 Type II by design. SSO, role-based access control, and full audit logging from day one.',
+    },
+    {
+      icon: <DeployIcon />,
+      title: 'Deployed in Weeks',
+      desc: 'Not months, not quarters. ERP connections go live in days. Full platform onboarding in 2–4 weeks.',
+    },
   ]
 
   return (
     <section ref={ref} className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p className="section-label mb-3">Bank Distribution Flywheel</p>
-          <h2 className="text-4xl font-bold text-orbit-navy leading-tight mb-6">
-            Banks are economically incentivized to distribute Quova
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-2xl mb-16">
+          <p className="section-label mb-3">Built for Enterprise</p>
+          <h2 className="text-4xl font-bold text-orbit-navy leading-tight mb-5">
+            Enterprise-grade from the ground up.<br />
+            <span className="text-orbit-teal">Not bolted on after the fact.</span>
           </h2>
-          <p className="text-orbit-gray-mid leading-relaxed mb-6">
-            Quova is designed for co-distribution through corporate banking
-            relationships. Your RMs already have the trust; Quova gives them
-            an intelligence layer to deepen the relationship — without
-            competing on rates.
+          <p className="text-orbit-gray-mid text-lg leading-relaxed">
+            Quova was architected for the security, compliance, and integration
+            requirements of $1B–$40B enterprises — not retrofitted from a startup tool.
           </p>
-          <ul className="space-y-4 mb-8">
-            {[
-              'White-label or co-branded deployment options',
-              'Execution-neutral — works with any bank',
-              '$0 CAC per bank-sourced lead',
-              '200+ corporate clients per bank RM network',
-            ].map(item => (
-              <li key={item} className="flex items-start gap-3 text-sm text-orbit-gray-mid">
-                <span className="mt-0.5 w-4 h-4 rounded-full bg-orbit-teal-light border border-orbit-teal flex items-center justify-center shrink-0">
-                  <span className="text-orbit-teal text-[10px]">✓</span>
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <Link to="/contact" className="btn-primary">
-            Explore Partnership →
-          </Link>
         </div>
 
-        <div className={`${visible ? 'animate-fade-up' : 'opacity-0'}`}>
-          <div className="bg-orbit-gray-light rounded-2xl p-8 border border-gray-100">
-            <p className="section-label mb-6">The Flywheel</p>
-            {flywheel.map((f, i) => (
-              <div key={i} className="flex items-start gap-4 py-3 border-b border-gray-100 last:border-0">
-                <span className="w-8 h-8 rounded-lg bg-orbit-teal flex items-center justify-center text-white font-bold text-xs shrink-0 mt-0.5">
-                  {f.step}
-                </span>
-                <div>
-                  <span className="font-semibold text-orbit-navy">{f.title}</span>
-                  <p className="text-xs text-orbit-gray-mid mt-0.5">{f.desc}</p>
-                </div>
-              </div>
-            ))}
-            <div className="mt-4 text-center">
-              <span className="text-orbit-teal text-xs font-bold uppercase tracking-widest">↻ Repeat — each cycle adds clients, volume, and bank commitment</span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {capabilities.map((c, i) => (
+            <div
+              key={i}
+              className={`bg-orbit-gray-light/40 rounded-2xl p-7 border border-gray-100 card-hover ${
+                visible ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${i * 120}ms` }}
+            >
+              <div className="mb-5">{c.icon}</div>
+              <h3 className="text-base font-bold text-orbit-navy mb-3">{c.title}</h3>
+              <p className="text-orbit-gray text-sm leading-relaxed">{c.desc}</p>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link to="/contact" className="btn-primary px-8 py-4 text-base">
+            See It in Your Environment →
+          </Link>
         </div>
       </div>
     </section>
+  )
+}
+
+function ERPIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect x="4" y="8" width="12" height="24" rx="2" stroke="#00C2A8" strokeWidth="1.5" />
+      <rect x="24" y="8" width="12" height="24" rx="2" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M16 16h8" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M16 20h8" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M16 24h8" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="8" y1="14" x2="12" y2="14" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="8" y1="18" x2="12" y2="18" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="28" y1="14" x2="32" y2="14" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="28" y1="18" x2="32" y2="18" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+    </svg>
+  )
+}
+
+function NeutralIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="16" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M12 20h16" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M20 12v16" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="12" cy="20" r="2.5" fill="#00C2A8" opacity="0.3" />
+      <circle cx="28" cy="20" r="2.5" fill="#00C2A8" opacity="0.3" />
+      <circle cx="20" cy="12" r="2.5" fill="#00C2A8" opacity="0.3" />
+      <circle cx="20" cy="28" r="2.5" fill="#00C2A8" opacity="0.3" />
+      <circle cx="20" cy="20" r="3" fill="#00C2A8" />
+    </svg>
+  )
+}
+
+function SecurityIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <path d="M20 4L6 10v10c0 10 14 16 14 16s14-6 14-16V10L20 4z" stroke="#00C2A8" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M15 20l3 3 7-7" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function DeployIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="16" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M20 10v10l6 4" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 6l-3-3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <path d="M30 6l3-3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+    </svg>
   )
 }
 
@@ -758,7 +808,7 @@ export default function Home() {
       <ProductOverview />
       <PlatformVision />
       <SocialProof />
-      <BankPartners />
+      <BuiltForEnterprise />
       <Team />
       <BottomCTA />
     </>
