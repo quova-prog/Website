@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/ClientPortal/:path*",
+      "destination": "https://orbit-mvp-eta.vercel.app/ClientPortal/:path*"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
