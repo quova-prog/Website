@@ -57,6 +57,12 @@ export default function Nav({ links }) {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://app.quovaos.com/login"
+            className="px-5 py-2 rounded-full border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors"
+          >
+            Login
+          </a>
           <Link to="/contact" className="btn-primary text-sm">
             Book a Demo
             <ArrowRight />
@@ -85,7 +91,13 @@ export default function Nav({ links }) {
               {l.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn-primary mt-2 justify-center">
+          <a
+            href="https://app.quovaos.com/login"
+            className="mt-2 py-2 rounded-full border border-white/30 text-white text-center text-sm font-medium hover:bg-white/10 transition-colors"
+          >
+            Login
+          </a>
+          <Link to="/contact" className="btn-primary mt-1 justify-center">
             Book a Demo
           </Link>
         </div>
