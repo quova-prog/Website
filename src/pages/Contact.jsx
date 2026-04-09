@@ -23,31 +23,16 @@ function PageHeader() {
 
 function DemoSection() {
   const [submitted, setSubmitted] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '', email: '', company: '', revenue: '', erps: '', message: '',
   })
 
   const update = key => e => setForm(f => ({ ...f, [key]: e.target.value }))
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault()
-    setSubmitting(true)
-    setError('')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (!res.ok) throw new Error('Request failed')
-      setSubmitted(true)
-    } catch {
-      setError('Something went wrong. Please email steve@quovaos.com directly.')
-    } finally {
-      setSubmitting(false)
-    }
+    // TODO: wire to backend / CRM
+    setSubmitted(true)
   }
 
   return (
@@ -165,16 +150,8 @@ function DemoSection() {
                 />
               </div>
 
-              {error && (
-                <p className="text-red-500 text-sm text-center">{error}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={submitting}
-                className="btn-primary w-full justify-center py-4 text-base disabled:opacity-60"
-              >
-                {submitting ? 'Sending…' : 'Request Demo →'}
+              <button type="submit" className="btn-primary w-full justify-center py-4 text-base">
+                Request Demo →
               </button>
 
               <p className="text-xs text-orbit-gray text-center">
