@@ -146,6 +146,55 @@ function ProofBar() {
 }
 
 /* ─────────────────────────────────────────────
+   PROBLEM ICONS
+───────────────────────────────────────────── */
+function FragmentedIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect x="2" y="6" width="14" height="12" rx="2" stroke="#00C2A8" strokeWidth="1.5" />
+      <rect x="24" y="22" width="14" height="12" rx="2" stroke="#00C2A8" strokeWidth="1.5" />
+      <rect x="24" y="6" width="14" height="12" rx="2" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <rect x="2" y="22" width="14" height="12" rx="2" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <path d="M16 12h3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 3" />
+      <path d="M21 12h3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 3" opacity="0.4" />
+      <path d="M16 28h3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 3" opacity="0.4" />
+      <path d="M21 28h3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 3" />
+    </svg>
+  )
+}
+
+function SpreadsheetIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect x="4" y="4" width="32" height="32" rx="3" stroke="#00C2A8" strokeWidth="1.5" />
+      <line x1="4" y1="12" x2="36" y2="12" stroke="#00C2A8" strokeWidth="1.5" />
+      <line x1="4" y1="20" x2="36" y2="20" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <line x1="4" y1="28" x2="36" y2="28" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <line x1="16" y1="12" x2="16" y2="36" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <line x1="28" y1="12" x2="28" y2="36" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <circle cx="32" cy="8" r="6" fill="#0A0F1E" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M30 8h4" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M32 6v4" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function NoAuditIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <path d="M12 4h16l8 8v24a4 4 0 01-4 4H12a4 4 0 01-4-4V8a4 4 0 014-4z" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M28 4v8h8" stroke="#00C2A8" strokeWidth="1.5" strokeLinejoin="round" />
+      <line x1="14" y1="18" x2="26" y2="18" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="14" y1="23" x2="22" y2="23" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="14" y1="28" x2="24" y2="28" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <circle cx="30" cy="30" r="7" fill="#0A0F1E" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M27 27l6 6" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M33 27l-6 6" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+/* ─────────────────────────────────────────────
    PROBLEM
 ───────────────────────────────────────────── */
 function Problem() {
@@ -153,17 +202,17 @@ function Problem() {
 
   const pains = [
     {
-      icon: '⚡',
+      icon: <FragmentedIcon />,
       title: 'Fragmented ERP data',
       body: 'Exposure data lives across SAP, Oracle, NetSuite and a dozen spreadsheets. No single source of truth. No real-time view.',
     },
     {
-      icon: '📊',
+      icon: <SpreadsheetIcon />,
       title: 'Excel-dependent workflows',
       body: '195 hours per month. Manual data pulls, formula chains, version control failures. 10%+ of exposures are mishandled as a direct result.',
     },
     {
-      icon: '📋',
+      icon: <NoAuditIcon />,
       title: 'No audit trail',
       body: 'ASC 815 and IFRS 9 require documentation that Excel cannot produce. One audit finding can cost more than the platform itself.',
     },
@@ -193,7 +242,7 @@ function Problem() {
               }`}
               style={{ animationDelay: `${i * 150}ms` }}
             >
-              <div className="text-3xl mb-4">{p.icon}</div>
+              <div className="mb-5">{p.icon}</div>
               <h3 className="text-lg font-bold text-orbit-navy mb-3">{p.title}</h3>
               <p className="text-orbit-gray text-sm leading-relaxed">{p.body}</p>
             </div>
