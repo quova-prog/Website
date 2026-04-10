@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { posts } from '../data/blogPosts'
+import SEO from '../components/SEO'
 
 export default function BlogPost() {
   const { slug } = useParams()
@@ -20,6 +21,11 @@ export default function BlogPost() {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        path={`/resources/${post.slug}`}
+        description={post.excerpt}
+      />
       {/* Header */}
       <div className="bg-orbit-navy pt-32 pb-20 hero-grid relative overflow-hidden">
         <div className="absolute inset-0"

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const CAPABILITIES = [
   {
@@ -288,6 +289,11 @@ function ProductCTA() {
 export default function Product() {
   return (
     <>
+      <SEO
+        title="Platform"
+        path="/product"
+        description="Quova's platform: multi-ERP exposure aggregation, streaming exposure graph, automated hedge accounting (ASC 815 / IFRS 9), and bank-neutral execution — all in one system."
+      />
       <PageHeader />
       {CAPABILITIES.map((cap, i) => (
         <CapabilitySection key={cap.tag} cap={cap} index={i} />

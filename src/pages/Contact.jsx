@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SEO from '../components/SEO'
 
 const DEMO_CALENDLY_URL = 'https://calendly.com/quovaos/demo' // Replace with live URL
 const FORMSPREE_URL = 'https://formspree.io/f/mbdpvlzb'
@@ -278,6 +279,11 @@ function DemoSection() {
 export default function Contact() {
   return (
     <>
+      <SEO
+        title="Book a Demo"
+        path="/contact"
+        description="See Quova in your environment. Book a 30-minute demo — we'll map your ERP stack, model your exposure profile, and show exactly where Quova fits."
+      />
       <PageHeader />
       <DemoSection />
     </>

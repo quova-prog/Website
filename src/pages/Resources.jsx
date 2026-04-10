@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { posts } from '../data/blogPosts'
+import SEO from '../components/SEO'
 
 function PageHeader() {
   return (
@@ -63,6 +64,11 @@ export default function Resources() {
 
   return (
     <>
+      <SEO
+        title="Resources"
+        path="/resources"
+        description="FX intelligence and thought leadership from Quova. Insights on corporate treasury, FX risk management, hedge accounting, and the infrastructure gap."
+      />
       <PageHeader />
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">

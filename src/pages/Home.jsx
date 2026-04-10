@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import SEO, { ORG_SCHEMA, WEBSITE_SCHEMA } from '../components/SEO'
 
 /* ─────────────────────────────────────────────
    Stat counter hook
@@ -801,6 +802,11 @@ function DashboardMockup() {
 export default function Home() {
   return (
     <>
+      <SEO
+        path="/"
+        description="Quova is the Financial Risk Operating System for enterprises. Replace fragmented, Excel-driven FX workflows with a purpose-built platform for corporate treasury."
+        jsonLd={[ORG_SCHEMA, WEBSITE_SCHEMA]}
+      />
       <Hero />
       <ProofBar />
       <Problem />

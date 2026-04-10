@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import benchmarks from '../data/benchmarks.json'
+import SEO from '../components/SEO'
 
 // ── Calculation helpers ──────────────────────────────────────
 
@@ -493,6 +494,12 @@ export default function FXDiagnostic() {
 
   return (
     <>
+      <SEO
+        title="FX Diagnostic"
+        path="/diagnostic"
+        canonical="/diagnostic"
+        description="Free FX diagnostic tool for corporate treasury teams. Answer 5 questions to estimate your annual FX leakage and identify optimization opportunities."
+      />
       {screen === 'intro' && <IntroScreen onStart={handleStart} />}
       {screen === 'questions' && (
         <QuestionStep key={step} step={step} answers={answers}

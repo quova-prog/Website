@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const FOUNDERS = [
   {
@@ -233,6 +234,11 @@ function Backers() {
 export default function About() {
   return (
     <>
+      <SEO
+        title="About"
+        path="/about"
+        description="Meet the Quova team. Founded in Toronto in 2026 by fintech veterans with 3 exits and 20+ years building financial infrastructure at scale."
+      />
       <PageHeader />
       <Origin />
       <Founders />

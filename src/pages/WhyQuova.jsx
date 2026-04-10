@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 function PageHeader() {
   return (
@@ -288,6 +289,12 @@ function WhyCTA() {
 export default function WhyQuova() {
   return (
     <>
+      <SEO
+        title="Why Quova"
+        path="/why-quova"
+        canonical="/why-quova"
+        description="Legacy FX platforms are 15+ years old with batch-first architecture. Quova is the modern, real-time alternative built for corporate treasury teams."
+      />
       <PageHeader />
       <LegacyIncumbents />
       <GlassBoxAI />
