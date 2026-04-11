@@ -737,8 +737,23 @@ function OrbitGraphic({ size = 400 }) {
 }
 
 function DashboardMockup() {
+  const [ref, visible] = useInView(0.3)
+
+  const bars = [
+    { pair: 'EUR/USD', pct: 78 },
+    { pair: 'GBP/USD', pct: 52 },
+    { pair: 'USD/CAD', pct: 35 },
+    { pair: 'USD/JPY', pct: 21 },
+  ]
+
+  const stats = [
+    { label: 'Total Exposure', val: '$847M', delta: '+2.3%' },
+    { label: 'Hedge Ratio', val: '74%', delta: '▲ Target: 80%' },
+    { label: 'P&L Impact', val: '-$1.2M', delta: 'MTD' },
+  ]
+
   return (
-    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 teal-glow">
+    <div ref={ref} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 teal-glow">
       {/* Window chrome */}
       <div className="flex items-center gap-2 mb-4">
         <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
@@ -749,14 +764,18 @@ function DashboardMockup() {
         </div>
       </div>
 
-      {/* Exposure summary */}
+      {/* Exposure summary — fade up with stagger */}
       <div className="grid grid-cols-3 gap-3 mb-4">
-        {[
-          { label: 'Total Exposure', val: '$847M', delta: '+2.3%' },
-          { label: 'Hedge Ratio', val: '74%', delta: '▲ Target: 80%' },
-          { label: 'P&L Impact', val: '-$1.2M', delta: 'MTD' },
-        ].map(c => (
-          <div key={c.label} className="bg-white/5 rounded-xl p-3">
+        {stats.map((c, i) => (
+          <div
+            key={c.label}
+            className="bg-white/5 rounded-xl p-3 transition-all duration-700"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? 'translateY(0)' : 'translateY(12px)',
+              transitionDelay: `${i * 150}ms`,
+            }}
+          >
             <p className="text-white/40 text-[10px] uppercase tracking-wide mb-1">{c.label}</p>
             <p className="text-white font-bold text-lg leading-none mb-1">{c.val}</p>
             <p className="text-orbit-teal text-[10px]">{c.delta}</p>
@@ -764,30 +783,41 @@ function DashboardMockup() {
         ))}
       </div>
 
-      {/* Mini chart */}
+      {/* Mini chart — bars grow left to right */}
       <div className="bg-white/5 rounded-xl p-4 mb-3">
         <p className="text-white/40 text-[10px] uppercase tracking-wide mb-3">Exposure by Currency Pair</p>
         <div className="space-y-2">
-          {[
-            { pair: 'EUR/USD', pct: 78 },
-            { pair: 'GBP/USD', pct: 52 },
-            { pair: 'USD/CAD', pct: 35 },
-            { pair: 'USD/JPY', pct: 21 },
-          ].map(r => (
+          {bars.map((r, i) => (
             <div key={r.pair} className="flex items-center gap-3">
               <span className="text-white/60 text-[10px] w-14 shrink-0">{r.pair}</span>
               <div className="flex-1 bg-white/10 rounded-full h-1.5">
-                <div className="bg-orbit-teal h-1.5 rounded-full transition-all duration-1000"
-                  style={{ width: `${r.pct}%` }} />
+                <div
+                  className="bg-orbit-teal h-1.5 rounded-full"
+                  style={{
+                    width: visible ? `${r.pct}%` : '0%',
+                    transition: `width 1s cubic-bezier(0.22, 1, 0.36, 1) ${450 + i * 200}ms`,
+                  }}
+                />
               </div>
-              <span className="text-white/40 text-[10px] w-6 text-right">{r.pct}%</span>
+              <span
+                className="text-white/40 text-[10px] w-6 text-right transition-opacity duration-500"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transitionDelay: `${900 + i * 200}ms`,
+                }}
+              >
+                {r.pct}%
+              </span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Status row */}
-      <div className="flex items-center gap-2">
+      {/* Status row — fades in last */}
+      <div
+        className="flex items-center gap-2 transition-opacity duration-700"
+        style={{ opacity: visible ? 1 : 0, transitionDelay: '1400ms' }}
+      >
         <span className="w-1.5 h-1.5 rounded-full bg-orbit-teal animate-pulse" />
         <span className="text-orbit-teal text-[10px] font-semibold">Live · Last updated 4 seconds ago</span>
         <span className="ml-auto text-white/30 text-[10px]">Audit-ready ✓</span>
