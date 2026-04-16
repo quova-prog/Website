@@ -265,6 +265,54 @@ function Problem() {
 }
 
 /* ─────────────────────────────────────────────
+   WHY NOW ICONS
+───────────────────────────────────────────── */
+function VolatilityIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect x="4" y="4" width="32" height="32" rx="3" stroke="#00C2A8" strokeWidth="1.5" />
+      <polyline points="8,28 14,22 19,26 25,16 32,12" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="32" cy="12" r="2.5" fill="#00C2A8" opacity="0.3" />
+      <line x1="8" y1="32" x2="8" y2="28" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="14" y1="32" x2="14" y2="26" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="19" y1="32" x2="19" y2="28" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="25" y1="32" x2="25" y2="22" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+    </svg>
+  )
+}
+
+function RegulatoryIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <path d="M12 4h16l8 8v24a4 4 0 01-4 4H12a4 4 0 01-4-4V8a4 4 0 014-4z" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M28 4v8h8" stroke="#00C2A8" strokeWidth="1.5" strokeLinejoin="round" />
+      <line x1="14" y1="18" x2="26" y2="18" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="14" y1="23" x2="22" y2="23" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <line x1="14" y1="28" x2="24" y2="28" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <circle cx="30" cy="30" r="7" fill="#0A0F1E" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M27.5 30l2 2 3.5-3.5" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function AIBudgetIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect x="6" y="8" width="28" height="24" rx="3" stroke="#00C2A8" strokeWidth="1.5" />
+      <line x1="6" y1="14" x2="34" y2="14" stroke="#00C2A8" strokeWidth="1.5" opacity="0.4" />
+      <circle cx="20" cy="24" r="5" stroke="#00C2A8" strokeWidth="1.5" />
+      <path d="M20 21v6" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M17 24h6" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="11" cy="11" r="1.5" fill="#00C2A8" opacity="0.3" />
+      <circle cx="15" cy="11" r="1.5" fill="#00C2A8" opacity="0.3" />
+      <circle cx="19" cy="11" r="1.5" fill="#00C2A8" opacity="0.3" />
+      <path d="M20 2v6" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      <path d="M16 4l4-2 4 2" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+/* ─────────────────────────────────────────────
    WHY NOW
 ───────────────────────────────────────────── */
 function WhyNow() {
@@ -272,7 +320,7 @@ function WhyNow() {
 
   const forces = [
     {
-      icon: '📈',
+      icon: <VolatilityIcon />,
       title: 'Macro Volatility',
       subtitle: 'Tariff-Driven FX Uncertainty',
       body: 'Sustained trade policy shifts have created ongoing currency volatility — manual spreadsheet hedging can no longer keep pace with real-time repricing.',
@@ -281,7 +329,7 @@ function WhyNow() {
       source: 'PwC Global Treasury Survey 2025',
     },
     {
-      icon: '📋',
+      icon: <RegulatoryIcon />,
       title: 'Regulatory Expansion',
       subtitle: 'FASB ASU 2025-09',
       body: 'FASB expanded what can be hedged across FX, IR, and commodities — while raising the documentation bar. Effective for public companies starting December 2026.',
@@ -290,7 +338,7 @@ function WhyNow() {
       source: 'FASB ASU 2025-09, Topic 815',
     },
     {
-      icon: '⚡',
+      icon: <AIBudgetIcon />,
       title: 'Budget Unlock',
       subtitle: 'C-Suite AI Mandates',
       body: 'CFOs are pushing departments to adopt AI-native tools — creating a new treasury technology budget line that didn\'t exist 18 months ago.',
@@ -322,7 +370,7 @@ function WhyNow() {
               }`}
               style={{ animationDelay: `${i * 150}ms` }}
             >
-              <div className="text-3xl mb-4">{f.icon}</div>
+              <div className="mb-5">{f.icon}</div>
               <p className="text-orbit-teal text-xs font-bold uppercase tracking-widest mb-1">{f.title}</p>
               <h3 className="text-lg font-bold text-orbit-navy mb-3">{f.subtitle}</h3>
               <p className="text-orbit-gray text-sm leading-relaxed mb-5">{f.body}</p>
