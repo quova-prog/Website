@@ -5,12 +5,13 @@ const CAPABILITIES = [
   {
     tag: 'Data Layer',
     title: 'Multi-ERP Exposure Aggregation',
-    body: `Quova connects to SAP, Oracle, NetSuite, and custom ERP instances simultaneously. 
-    Our data engineering layer handles intercompany elimination, entity consolidation, 
-    and lineage tracking — so you always know not just what the exposure is, 
+    body: `Quova connects to SAP, Oracle, NetSuite, and custom ERP instances simultaneously.
+    Our data engineering layer handles intercompany elimination, entity consolidation,
+    and lineage tracking — so you always know not just what the exposure is,
     but where it came from and how it was calculated.`,
     bullets: [
       'SAP S/4HANA, Oracle ERP Cloud, NetSuite native connectors',
+      'Intercompany, translation, and net-investment exposures — all first-class',
       'Intercompany elimination and consolidated entity view',
       'Full data lineage from source transaction to hedged position',
       'Real-time streaming — no batch jobs, no stale data',
@@ -20,9 +21,9 @@ const CAPABILITIES = [
   {
     tag: 'Analytics',
     title: 'Streaming Exposure Graph',
-    body: `A live, drill-down exposure view across every currency pair, entity, and 
-    maturity bucket. Filter by ERP, subsidiary, trade type, or counterparty. 
-    No manual reconciliation. No spreadsheet pivots. The graph updates in real time 
+    body: `A live, drill-down exposure view across every currency pair, entity, and
+    maturity bucket. Filter by ERP, subsidiary, trade type, or counterparty.
+    No manual reconciliation. No spreadsheet pivots. The graph updates in real time
     as transactions flow through your ERPs.`,
     bullets: [
       'Live exposure by currency pair, entity, and maturity',
@@ -32,26 +33,57 @@ const CAPABILITIES = [
     ],
   },
   {
+    tag: 'Forecasting',
+    title: 'Cash Flow Forecasting That Earns Trust',
+    body: `The hardest part of FX hedging isn't the hedge — it's trusting the forecast
+    from the businesses. Quova tracks forecast-vs-actual variance by entity and BU,
+    scores forecast reliability, and calibrates suggested hedge ratios accordingly.`,
+    bullets: [
+      'Forecast-vs-actual variance tracking by entity, BU, and currency',
+      'Confidence scoring derived from historical forecast accuracy',
+      'Hedge-ratio recommendations calibrated to forecast reliability',
+      'Rolling 12-month cash-flow view across every legal entity',
+    ],
+    accent: true,
+  },
+  {
     tag: 'Compliance',
     title: 'Audit-Ready Hedge Accounting',
-    body: `ASC 815 (US GAAP) and IFRS 9 documentation that is generated automatically 
-    as you hedge — not assembled after the fact. Effectiveness testing, hedge 
-    designations, prospective and retrospective assessments, and the full 
+    body: `ASC 815 (US GAAP) and IFRS 9 documentation that is generated automatically
+    as you hedge — not assembled after the fact. Effectiveness testing, hedge
+    designations, prospective and retrospective assessments, and the full
     audit trail in one exportable file.`,
     bullets: [
       'ASC 815 and IFRS 9 designation documentation',
-      'Automated effectiveness testing (prospective + retrospective)',
+      'Dollar-offset, regression, and critical-terms-match effectiveness tests',
+      'Cash flow, fair value, and net investment hedges — with OCI reclassification',
+      'De-designation and re-designation workflow, fully documented',
       'Audit-export package: one click, complete documentation',
       '10%+ fewer exposure mismatches vs. manual process',
+    ],
+  },
+  {
+    tag: 'Governance',
+    title: 'Four-Eyes on Every Trade. Sits Alongside Your Stack.',
+    body: `Enterprise treasury runs on separation of duties and layered approvals
+    — not on letting software press buttons. Quova is the intelligence and
+    documentation layer on top of the TMS, ERP, and bank relationships you
+    already have.`,
+    bullets: [
+      'Maker-checker approval on every hedge — no auto-execution',
+      'Tiered sign-off: desk → treasurer → CFO by exposure size and policy',
+      'Immutable, append-only audit log with full lineage',
+      'Native GTreasury integration; API coexistence with other TMSs',
+      'SSO, RBAC, SOC 2 Type II — available under NDA',
     ],
     accent: true,
   },
   {
     tag: 'Execution',
     title: 'Execution-Neutral Trade Infrastructure',
-    body: `Trade with any bank, any counterparty. Quova is not captive — 
-    we do not require you to route trades through a specific institution. 
-    Full trade lifecycle support from pre-trade analytics through confirmation, 
+    body: `Trade with any bank, any counterparty. Quova is not captive —
+    we do not require you to route trades through a specific institution.
+    Full trade lifecycle support from pre-trade analytics through confirmation,
     settlement, and post-trade reconciliation.`,
     bullets: [
       'Route trades to any bank or ECN — no captive relationships',
@@ -73,9 +105,11 @@ function PageHeader() {
           style={{ letterSpacing: '-0.03em' }}>
           The Financial Risk<br />Operating System
         </h1>
-        <p className="text-white/60 text-xl max-w-xl leading-relaxed">
-          Trade execution is &lt;5% of the FX workflow. Quova automates the other 95%.
-          Four integrated modules. One live data model. Glass Box AI. Audit-ready by design.
+        <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
+          Trade execution is &lt;5% of the FX workflow. Quova automates the other 95% —
+          exposure aggregation, forecast variance, hedge accounting, approvals,
+          and audit documentation. Six integrated modules. One live data model.
+          Glass Box AI with human approval on every trade.
         </p>
       </div>
     </div>
@@ -196,6 +230,71 @@ function CapabilityVisual({ tag }) {
         <div className="mt-4 callout bg-orbit-teal/5 border-orbit-teal/30">
           <p className="text-orbit-teal text-xs">
             Execution-neutral — Quova never restricts which institution you trade with.
+          </p>
+        </div>
+      </div>
+    ),
+    'Forecasting': (
+      <div className="bg-orbit-navy rounded-2xl p-6 border border-white/10">
+        <p className="text-xs text-orbit-teal font-bold uppercase tracking-widest mb-4">Forecast vs. Actual · EUR Inflows</p>
+        <div className="space-y-3">
+          {[
+            { month: 'Jan', fc: 88, act: 92, conf: 'High' },
+            { month: 'Feb', fc: 76, act: 61, conf: 'Medium' },
+            { month: 'Mar', fc: 82, act: 84, conf: 'High' },
+            { month: 'Apr', fc: 64, act: 48, conf: 'Low' },
+          ].map(r => (
+            <div key={r.month} className="bg-white/5 rounded-lg p-3">
+              <div className="flex justify-between text-xs mb-2">
+                <span className="text-white font-semibold">{r.month}</span>
+                <span className={`text-[10px] font-bold uppercase tracking-wider ${
+                  r.conf === 'High' ? 'text-orbit-teal' : r.conf === 'Medium' ? 'text-yellow-300/80' : 'text-red-400/80'
+                }`}>{r.conf} conf.</span>
+              </div>
+              <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-white/30 rounded-full" style={{ width: `${r.fc}%` }} />
+                <div className="absolute inset-y-0 left-0 bg-orbit-teal rounded-full" style={{ width: `${r.act}%` }} />
+              </div>
+              <div className="flex justify-between text-[10px] mt-1.5 text-white/40">
+                <span>Forecast: {r.fc}%</span>
+                <span>Actual: {r.act}%</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 callout bg-orbit-teal/5 border-orbit-teal/30">
+          <p className="text-orbit-teal text-xs">
+            Hedge ratios auto-adjust to forecast confidence — higher ratios where forecasts hold, lower where they drift.
+          </p>
+        </div>
+      </div>
+    ),
+    'Governance': (
+      <div className="bg-orbit-navy rounded-2xl p-6 border border-white/10">
+        <p className="text-xs text-orbit-teal font-bold uppercase tracking-widest mb-4">Hedge #A-2841 · Approval Chain</p>
+        <div className="space-y-2">
+          {[
+            { role: 'FX Analyst', name: 'Initiated', state: 'done' },
+            { role: 'Treasury Desk', name: 'Reviewed · Maker', state: 'done' },
+            { role: 'Group Treasurer', name: 'Approved · Checker', state: 'done' },
+            { role: 'CFO (>$10M threshold)', name: 'Awaiting approval', state: 'pending' },
+          ].map((s, i) => (
+            <div key={i} className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
+              <span className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
+                s.state === 'done' ? 'bg-orbit-teal text-white' : 'bg-white/10 text-white/40 border border-white/20'
+              }`}>
+                {s.state === 'done' ? '✓' : i + 1}
+              </span>
+              <div className="flex-1 min-w-0">
+                <div className="text-white text-sm font-medium">{s.role}</div>
+                <div className="text-white/40 text-xs">{s.name}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 callout bg-orbit-teal/5 border-orbit-teal/30">
+          <p className="text-orbit-teal text-xs">
+            Four-eyes minimum · tiered by exposure size · every step immutably logged.
           </p>
         </div>
       </div>

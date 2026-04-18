@@ -193,7 +193,7 @@ function DesignPartners() {
             <div className="bg-white/5 rounded-xl p-5 border border-white/10">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-2 h-2 rounded-full bg-orbit-teal" />
-                <span className="text-white font-semibold">IPO-stage enterprise</span>
+                <span className="text-white font-semibold">Multi-billion-dollar global enterprise SaaS firm · IPO-track</span>
                 <span className="text-white/40 text-xs">Design partner</span>
               </div>
               <p className="text-white/60 text-sm">

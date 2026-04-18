@@ -69,10 +69,10 @@ function Hero() {
           </h1>
 
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-lg">
-            One platform for FX, interest rate, commodity, and counterparty risk.
-            Quova replaces fragmented, spreadsheet-driven workflows with a
-            purpose-built operating system — from multi-ERP exposure aggregation to
-            audit-ready hedge accounting documentation.
+            Replace 195 spreadsheet-hours per month with a single, auditor-ready
+            system of record. Purpose-built for ASC 815 and IFRS 9. Sits alongside
+            your TMS, connects to your ERPs, and leaves execution on the banks you
+            already use.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -405,8 +405,8 @@ function ProductOverview() {
       tag: 'Automation',
     },
     {
-      title: 'AI Hedge Advisor',
-      body: 'Glass Box AI — every recommendation includes audit-ready reasoning. ML-driven strategy, backtesting, and independent pricing benchmarks.',
+      title: 'AI Hedge Analyst — Human-Approved',
+      body: 'Glass Box AI generates hedge recommendations with audit-ready reasoning for every suggestion. No trade ever executes without human approval — maker-checker workflow built in.',
       tag: 'Intelligence',
     },
     {
@@ -434,22 +434,44 @@ function ProductOverview() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {capabilities.map((c, i) => (
-            <div
+            <Link
+              to="/product"
               key={i}
-              className={`rounded-2xl p-7 border border-gray-100 bg-white card-hover group ${
+              className={`rounded-2xl p-7 border border-gray-100 bg-white card-hover group flex flex-col ${
                 visible ? 'animate-fade-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${i * 120}ms` }}
             >
-              <span className="inline-block bg-orbit-teal-light text-orbit-teal-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
+              <span className="self-start bg-orbit-teal-light text-orbit-teal-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
                 {c.tag}
               </span>
               <h3 className="text-base font-bold text-orbit-navy mb-3 group-hover:text-orbit-teal transition-colors">
                 {c.title}
               </h3>
-              <p className="text-orbit-gray text-sm leading-relaxed">{c.body}</p>
-            </div>
+              <p className="text-orbit-gray text-sm leading-relaxed mb-4">{c.body}</p>
+              <span className="mt-auto text-orbit-teal text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
+                See the detail →
+              </span>
+            </Link>
           ))}
+        </div>
+
+        {/* Treasurer-targeted cross-link */}
+        <div className="mt-10 rounded-2xl border border-orbit-teal/30 bg-orbit-teal-light/50 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div className="max-w-2xl">
+            <p className="text-orbit-teal-dark text-xs font-bold uppercase tracking-widest mb-2">
+              For treasurers doing diligence
+            </p>
+            <p className="text-orbit-navy text-base leading-relaxed">
+              The platform page has the full spec — ASC 815 dollar-offset and regression
+              effectiveness tests, forecast-vs-actual variance by entity, maker-checker
+              approval chains, intercompany and net-investment hedge workflows, and
+              the full integration list.
+            </p>
+          </div>
+          <Link to="/product" className="btn-primary px-7 py-3.5 text-sm shrink-0">
+            Explore the Platform →
+          </Link>
         </div>
       </div>
     </section>
@@ -529,7 +551,7 @@ function SocialProof() {
             pre-audit preparation."
           </blockquote>
           <p className="text-orbit-teal text-sm font-semibold">
-            IPO-stage enterprise · Design partner
+            Multi-billion-dollar global enterprise SaaS firm · IPO-track · Design partner
           </p>
         </div>
       </div>
@@ -550,9 +572,9 @@ function BuiltForEnterprise() {
       desc: 'Native connectors for SAP S/4HANA, Oracle ERP Cloud, and NetSuite. Continuous API sync — no batch jobs, no stale data.',
     },
     {
-      icon: <NeutralIcon />,
-      title: 'Execution-Neutral',
-      desc: 'Trade with any bank, any counterparty. Quova never restricts where you execute — best price, always.',
+      icon: <GovernanceIcon />,
+      title: 'Governance & Controls',
+      desc: 'Maker-checker approval on every hedge. Tiered sign-off by desk, treasurer, and CFO. Immutable audit log. Four-eyes by default.',
     },
     {
       icon: <SecurityIcon />,
@@ -561,8 +583,8 @@ function BuiltForEnterprise() {
     },
     {
       icon: <DeployIcon />,
-      title: 'Deployed in Weeks',
-      desc: 'Not months, not quarters. ERP connections go live in days. Full platform onboarding in 2–4 weeks.',
+      title: 'Deployed in 4–8 Weeks',
+      desc: 'ERP connectors go live in days. Full production deployment — including your InfoSec review and UAT — in 4 to 8 weeks.',
     },
   ]
 
@@ -623,17 +645,15 @@ function ERPIcon() {
   )
 }
 
-function NeutralIcon() {
+function GovernanceIcon() {
   return (
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-      <circle cx="20" cy="20" r="16" stroke="#00C2A8" strokeWidth="1.5" />
-      <path d="M12 20h16" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M20 12v16" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="12" cy="20" r="2.5" fill="#00C2A8" opacity="0.3" />
-      <circle cx="28" cy="20" r="2.5" fill="#00C2A8" opacity="0.3" />
-      <circle cx="20" cy="12" r="2.5" fill="#00C2A8" opacity="0.3" />
-      <circle cx="20" cy="28" r="2.5" fill="#00C2A8" opacity="0.3" />
-      <circle cx="20" cy="20" r="3" fill="#00C2A8" />
+      <path d="M20 4L6 10v10c0 10 14 16 14 16s14-6 14-16V10L20 4z" stroke="#00C2A8" strokeWidth="1.5" strokeLinejoin="round" />
+      <rect x="13" y="15" width="14" height="10" rx="1.5" stroke="#00C2A8" strokeWidth="1.5" opacity="0.5" />
+      <line x1="15.5" y1="18" x2="24.5" y2="18" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <path d="M15.5 21.5l1.5 1.5 3-3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="13" cy="15" r="1.5" fill="#00C2A8" />
+      <circle cx="27" cy="15" r="1.5" fill="#00C2A8" opacity="0.5" />
     </svg>
   )
 }
@@ -655,6 +675,127 @@ function DeployIcon() {
       <path d="M10 6l-3-3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
       <path d="M30 6l3-3" stroke="#00C2A8" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
     </svg>
+  )
+}
+
+/* ─────────────────────────────────────────────
+   ALONGSIDE YOUR STACK
+───────────────────────────────────────────── */
+function AlongsideStack() {
+  const [ref, visible] = useInView()
+
+  const tiles = [
+    {
+      label: 'ERPs',
+      body: 'SAP S/4HANA · Oracle ERP Cloud · NetSuite',
+      note: 'Native connectors, continuous sync',
+    },
+    {
+      label: 'TMS',
+      body: 'GTreasury (native)',
+      note: 'API coexistence available for other TMSs',
+    },
+    {
+      label: 'Execution',
+      body: 'Trade with any bank or ECN',
+      note: 'Execution-neutral by design',
+    },
+    {
+      label: 'Market Data',
+      body: 'Your existing subscriptions, unchanged',
+      note: 'No data-vendor lock-in',
+    },
+  ]
+
+  return (
+    <section ref={ref} className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-2xl mb-16">
+          <p className="section-label mb-3">Coexistence</p>
+          <h2 className="text-4xl font-bold text-orbit-navy leading-tight mb-5">
+            Sits alongside your TMS.<br />
+            <span className="text-orbit-teal">Layers on your ERPs.</span>
+          </h2>
+          <p className="text-orbit-gray-mid text-lg leading-relaxed">
+            Quova doesn't replace your TMS or ERP. It's the intelligence and
+            documentation layer on top — so the systems you already paid for
+            finally talk to each other.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {tiles.map((t, i) => (
+            <div
+              key={i}
+              className={`bg-orbit-gray-light/40 rounded-2xl p-7 border border-gray-100 card-hover ${
+                visible ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${i * 120}ms` }}
+            >
+              <p className="text-orbit-teal text-xs font-bold uppercase tracking-widest mb-3">{t.label}</p>
+              <p className="text-orbit-navy font-bold text-base leading-snug mb-2">{t.body}</p>
+              <p className="text-orbit-gray text-xs leading-relaxed">{t.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────────────────────────────────
+   FOR THE AUDITOR
+───────────────────────────────────────────── */
+function ForTheAuditor() {
+  const [ref, visible] = useInView()
+
+  const points = [
+    'ASC 815 and IFRS 9 designation documentation',
+    'Prospective + retrospective effectiveness testing — dollar-offset, regression, critical-terms match',
+    'Cash flow, fair value, and net investment hedges — with OCI reclassification',
+    'Immutable audit log with full data lineage back to the source transaction',
+  ]
+
+  return (
+    <section ref={ref} className="py-24 bg-orbit-navy">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-2xl mb-12">
+          <p className="section-label text-orbit-teal mb-3">For the Auditor</p>
+          <h2 className="text-4xl font-bold text-white leading-tight mb-5">
+            Documentation your Big 4<br />already knows how to read.
+          </h2>
+          <p className="text-white/60 text-lg leading-relaxed">
+            Every hedge designation, effectiveness test, and de-designation is
+            generated as you work — not assembled the week before audit.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {points.map((p, i) => (
+            <div
+              key={i}
+              className={`flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 ${
+                visible ? 'animate-fade-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <span className="w-6 h-6 rounded-full bg-orbit-teal/20 border border-orbit-teal flex items-center justify-center shrink-0 mt-0.5">
+                <span className="text-orbit-teal text-xs font-bold">✓</span>
+              </span>
+              <p className="text-white/80 text-sm leading-relaxed">{p}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 max-w-3xl bg-orbit-teal/5 border border-orbit-teal/30 rounded-2xl p-5">
+          <p className="text-orbit-teal text-sm leading-relaxed">
+            <strong className="font-semibold">One-click audit export</strong> — a
+            complete documentation package your auditor can open directly.
+            Aligned with Big 4 hedge-accounting review expectations.
+          </p>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -731,14 +872,14 @@ function BottomCTA() {
         </p>
         <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6"
           style={{ letterSpacing: '-0.02em' }}>
-          Your treasury team loses an average of{' '}
+          Treasury teams in our target segment lose an average of{' '}
           <span className="text-orbit-teal">$9M+ per year</span>{' '}
           to FX inefficiency.
-          <br />Let's fix that.
         </h2>
-        <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
-          A 30-minute demo will show you exactly where the leakage is
-          and what Quova would look like in your environment.
+        <p className="text-white/50 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          Our design partner recovered a validated <span className="text-white font-semibold">$2.4M in
+          annual value on a $155K platform cost</span> — payback in under one month.
+          A 30-minute demo will show you where your number is.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link to="/contact" className="btn-primary px-10 py-4 text-base">
@@ -893,6 +1034,8 @@ export default function Home() {
       <PlatformVision />
       <SocialProof />
       <BuiltForEnterprise />
+      <AlongsideStack />
+      <ForTheAuditor />
       <Team />
       <BottomCTA />
     </>

@@ -213,12 +213,12 @@ function DemoSection() {
               {
                 n: '03',
                 title: 'Audit documentation walkthrough (10 min)',
-                body: 'We demonstrate the ASC 815 / IFRS 9 documentation workflow end-to-end, from hedge designation to audit export.',
+                body: 'We demonstrate the ASC 815 / IFRS 9 workflow end-to-end — designation, dollar-offset or regression effectiveness test, the maker-checker approval, and the one-click audit-export package your auditor can open directly.',
               },
               {
                 n: '04',
-                title: 'ROI model for your firm (5 min)',
-                body: 'We model the ROI case against your firm\'s revenue, ERP complexity, and current FX workflow.',
+                title: 'ROI benchmark for your firm (5 min)',
+                body: 'We benchmark your firm against the $9M+ average annual FX loss in our target segment and walk through the line items that drive it — hedge-ratio gap, spread tax, manual effort — so you leave with a number, not a pitch.',
               },
             ].map(s => (
               <div key={s.n} className="flex gap-5">

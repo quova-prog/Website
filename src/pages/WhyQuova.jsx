@@ -117,6 +117,7 @@ function GlassBoxAI() {
     { legacy: 'Nightly batch uploads', orbit: 'Real-time ingestion as ERP transactions post' },
     { legacy: 'No data lineage', orbit: 'Every exposure traces back to source transaction' },
     { legacy: 'Black box recommendations', orbit: 'Every recommendation includes audit-ready reasoning' },
+    { legacy: 'Opaque recommendations — no maker-checker trail', orbit: 'Every recommendation approvable, rejectable, and audit-logged' },
     { legacy: 'Manual reconciliation (4–5 days/mo)', orbit: 'Continuous sync eliminates manual stitching' },
   ]
 
@@ -182,9 +183,10 @@ function ROISection() {
             The business case isn't modelled. It's measured.
           </h2>
           <p className="text-orbit-gray-mid leading-relaxed">
-            These figures come from an IPO-stage enterprise design partnership
-            co-developing Quova's product. We present this as a single validated data point,
-            not a market average.
+            These figures come from our active design partner — a multi-billion-dollar
+            global enterprise SaaS firm on an IPO track — co-developing Quova in
+            production treasury workflows. We present this as a single validated
+            data point, not a market average.
           </p>
         </div>
 
