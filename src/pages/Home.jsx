@@ -949,7 +949,7 @@ function DashboardMockup() {
         <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
         <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
         <div className="ml-3 flex-1 bg-white/5 rounded px-3 py-1 text-xs text-white/30">
-          app.orbitfx.com / exposures
+          app.quovaos.com / exposures
         </div>
       </div>
 
