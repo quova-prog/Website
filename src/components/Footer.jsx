@@ -59,8 +59,8 @@ export default function Footer() {
                 <Link to="/contact" className="hover:text-orbit-teal transition-colors">Contact</Link>
               </li>
               <li>
-                <a href="mailto:steve@orbitfx.com" className="hover:text-orbit-teal transition-colors">
-                  steve@orbitfx.com
+                <a href="mailto:steve@quovaos.com" className="hover:text-orbit-teal transition-colors">
+                  steve@quovaos.com
                 </a>
               </li>
               <li className="text-white/40">Toronto, Canada</li>

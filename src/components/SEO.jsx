@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = 'https://www.orbitfx.com'
+const SITE_URL = 'https://www.quovaos.com'
 const DEFAULT_TITLE = 'Orbit — The Financial Risk OS'
 const DEFAULT_DESC =
   'Orbit — The Financial Risk OS for Enterprises. Replace fragmented, Excel-driven FX workflows with a purpose-built operating system.'
@@ -58,7 +58,7 @@ export const ORG_SCHEMA = {
   foundingLocation: { '@type': 'Place', name: 'Toronto, Canada' },
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'steve@orbitfx.com',
+    email: 'steve@quovaos.com',
     contactType: 'sales',
   },
   sameAs: [],

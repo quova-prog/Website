@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SEO from '../components/SEO'
 
-const DEMO_CALENDLY_URL = 'https://calendly.com/orbitfx/demo' // Replace with live URL
+const DEMO_CALENDLY_URL = 'https://calendly.com/quovaos/demo' // Replace with live URL
 const FORMSPREE_URL = 'https://formspree.io/f/mbdpvlzb'
 
 function PageHeader() {
@@ -46,7 +46,7 @@ function DemoSection() {
       if (!res.ok) throw new Error('Request failed')
       setSubmitted(true)
     } catch {
-      setError('Something went wrong. Please email steve@orbitfx.com directly.')
+      setError('Something went wrong. Please email steve@quovaos.com directly.')
     } finally {
       setSubmitting(false)
     }
@@ -256,9 +256,9 @@ function DemoSection() {
           {/* Direct contact */}
           <div className="mt-8 pt-8 border-t border-gray-100">
             <p className="text-sm font-semibold text-orbit-navy mb-1">Direct contact</p>
-            <a href="mailto:steve@orbitfx.com"
+            <a href="mailto:steve@quovaos.com"
               className="text-orbit-teal text-sm hover:underline">
-              steve@orbitfx.com
+              steve@quovaos.com
             </a>
             <p className="text-orbit-gray text-xs mt-1">CEO · Steve LaBella · Toronto, Canada</p>
           </div>

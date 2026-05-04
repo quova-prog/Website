@@ -8,7 +8,7 @@ const FOUNDERS = [
     name: 'Steve LaBella',
     title: 'CEO & Co-Founder',
     bio: '3 exits including iSend, which scaled to $100M+ revenue, and BillMo and Topaz. Named Forbes Top Tech Innovator. Steve has spent 20+ years building fintech infrastructure at scale — Orbit is the problem he kept running into on the other side of the table.',
-    email: 'steve@orbitfx.com',
+    email: 'steve@quovaos.com',
   },
   {
     initials: 'MD',
