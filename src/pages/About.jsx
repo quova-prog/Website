@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import OrbitLogo from '../components/OrbitLogo'
 
 const FOUNDERS = [
   {
     initials: 'SL',
     name: 'Steve LaBella',
     title: 'CEO & Co-Founder',
-    bio: '3 exits including iSend, which scaled to $100M+ revenue, and BillMo and Topaz. Named Forbes Top Tech Innovator. Steve has spent 20+ years building fintech infrastructure at scale — Quova is the problem he kept running into on the other side of the table.',
-    email: 'steve@quovaos.com',
+    bio: '3 exits including iSend, which scaled to $100M+ revenue, and BillMo and Topaz. Named Forbes Top Tech Innovator. Steve has spent 20+ years building fintech infrastructure at scale — Orbit is the problem he kept running into on the other side of the table.',
+    email: 'steve@orbitfx.com',
   },
   {
     initials: 'MD',
     name: 'Mingze Deng',
     title: 'CPO & Co-Founder',
-    bio: 'Architect of Quova\'s platform vision and the technical framework behind the streaming exposure graph. Mingze specialises in data-intensive fintech infrastructure — the kind where lineage, auditability, and real-time correctness are not optional.',
+    bio: 'Architect of Orbit\'s platform vision and the technical framework behind the streaming exposure graph. Mingze specialises in data-intensive fintech infrastructure — the kind where lineage, auditability, and real-time correctness are not optional.',
   },
 ]
 
@@ -21,7 +22,7 @@ const ADVISORS = [
   {
     name: 'Jim McCrindle',
     credential: 'Former Head of Corporate FX, North America — Major Global Bank',
-    note: '20+ years institutional FX. Equity-compensated advisor shaping Quova\'s bank distribution strategy.',
+    note: '20+ years institutional FX. Equity-compensated advisor shaping Orbit\'s bank distribution strategy.',
   },
   {
     name: 'David Pierce',
@@ -56,7 +57,7 @@ function PageHeader() {
           Built by operators.<br />Backed by the right people.
         </h1>
         <p className="text-white/60 text-xl max-w-2xl">
-          Quova was founded in Toronto in 2026 after 50+ interviews with CFOs and
+          Orbit was founded in Toronto in 2026 after 50+ interviews with CFOs and
           Treasurers made one thing clear: enterprises need a unified financial risk
           operating system — not another point solution.
         </p>
@@ -87,7 +88,7 @@ function Origin() {
             documentation automatically.
           </p>
           <p className="text-orbit-gray-mid leading-relaxed">
-            Quova is the platform that should have existed a decade ago. We built
+            Orbit is the platform that should have existed a decade ago. We built
             it for the $1B–$40B segment that the enterprise vendors ignore and the
             boutique advisors can't scale.
           </p>
@@ -185,7 +186,7 @@ function DesignPartners() {
             Co-built with enterprises who use it
           </h2>
           <p className="text-white/60 leading-relaxed mb-6">
-            Quova's design partners are not reference customers — they are
+            Orbit's design partners are not reference customers — they are
             active co-developers shaping the product through real treasury
             workflows, not focus groups.
           </p>
@@ -214,7 +215,7 @@ function Backers() {
       <div className="max-w-7xl mx-auto px-6 text-center">
         <p className="section-label mb-6">Backed By</p>
         <div className="inline-flex items-center gap-4 bg-orbit-gray-light px-8 py-5 rounded-2xl">
-          <img src="/quova-icon.png" alt="Quova" className="w-9 h-9" />
+          <OrbitLogo size={36} iconOnly />
           <div className="text-left">
             <div className="font-bold text-orbit-navy">Diagram Ventures</div>
             <div className="text-xs text-orbit-gray">Toronto, Canada</div>
@@ -237,7 +238,7 @@ export default function About() {
       <SEO
         title="About"
         path="/about"
-        description="Meet the Quova team. Founded in Toronto in 2026 by fintech veterans with 3 exits and 20+ years building financial infrastructure at scale."
+        description="Meet the Orbit team. Founded in Toronto in 2026 by fintech veterans with 3 exits and 20+ years building financial infrastructure at scale."
       />
       <PageHeader />
       <Origin />

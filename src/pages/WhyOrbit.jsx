@@ -7,7 +7,7 @@ function PageHeader() {
       <div className="absolute inset-0"
         style={{ background: 'radial-gradient(ellipse at 40% 60%, rgba(0,194,168,0.07) 0%, transparent 60%)' }} />
       <div className="relative max-w-7xl mx-auto px-6">
-        <p className="section-label text-orbit-teal mb-4">Why Quova</p>
+        <p className="section-label text-orbit-teal mb-4">Why Orbit</p>
         <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
           style={{ letterSpacing: '-0.03em' }}>
           Legacy incumbents.<br />
@@ -88,7 +88,7 @@ function LegacyIncumbents() {
         {/* Orbit advantage */}
         <div className="bg-orbit-navy rounded-2xl p-8 border border-orbit-teal/30">
           <div className="flex items-center gap-3 mb-4">
-            <span className="bg-orbit-teal text-white text-xs font-bold px-3 py-1 rounded-full">Quova</span>
+            <span className="bg-orbit-teal text-white text-xs font-bold px-3 py-1 rounded-full">Orbit</span>
             <span className="text-white/50 text-xs">Modern · API-First · AI-Native</span>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -130,7 +130,7 @@ function GlassBoxAI() {
             Why this can't be built with an LLM and an API
           </h2>
           <p className="text-white/60 leading-relaxed">
-            In regulated treasury, "Black Box AI" is a liability. Quova is Glass Box AI —
+            In regulated treasury, "Black Box AI" is a liability. Orbit is Glass Box AI —
             every decision is traceable, auditable, and explainable.
           </p>
         </div>
@@ -150,7 +150,7 @@ function GlassBoxAI() {
           </div>
           {/* Orbit */}
           <div className="rounded-2xl p-7 bg-orbit-teal/10 border border-orbit-teal/30">
-            <p className="text-xs font-bold text-orbit-teal uppercase tracking-widest mb-5">Quova: Streaming Exposure Graph</p>
+            <p className="text-xs font-bold text-orbit-teal uppercase tracking-widest mb-5">Orbit: Streaming Exposure Graph</p>
             <ul className="space-y-4">
               {comparisons.map((c, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-white/80">
@@ -170,7 +170,7 @@ function ROISection() {
   const metrics = [
     { number: '15–22×', label: 'Annual ROI', source: 'Enterprise design partner engagement' },
     { number: '<1 mo', label: 'Payback period', source: 'Enterprise design partner engagement' },
-    { number: '90%', label: 'Manual FX effort reduction', source: 'Quova design partner data' },
+    { number: '90%', label: 'Manual FX effort reduction', source: 'Orbit design partner data' },
     { number: '$2.4M', label: 'Annual value delivered', source: '$155K platform cost' },
   ]
 
@@ -184,7 +184,7 @@ function ROISection() {
           </h2>
           <p className="text-orbit-gray-mid leading-relaxed">
             These figures come from our active design partner — a multi-billion-dollar
-            global enterprise SaaS firm on an IPO track — co-developing Quova in
+            global enterprise SaaS firm on an IPO track — co-developing Orbit in
             production treasury workflows. We present this as a single validated
             data point, not a market average.
           </p>
@@ -219,7 +219,7 @@ function MoatSection() {
   const moat = [
     {
       title: 'Data engineering layer',
-      body: 'Intercompany elimination and lineage tracking are unsolved problems in every incumbent product. Quova built the data engineering moat first — this is not a feature LLMs can replicate.',
+      body: 'Intercompany elimination and lineage tracking are unsolved problems in every incumbent product. Orbit built the data engineering moat first — this is not a feature LLMs can replicate.',
     },
     {
       title: 'Audit-grade documentation',
@@ -227,11 +227,11 @@ function MoatSection() {
     },
     {
       title: 'AI-native architecture',
-      body: 'Because Quova owns the data model end-to-end, AI layers have the context they need to be useful. Exposure anomaly detection, hedge strategy suggestions, and natural-language audit queries are all native.',
+      body: 'Because Orbit owns the data model end-to-end, AI layers have the context they need to be useful. Exposure anomaly detection, hedge strategy suggestions, and natural-language audit queries are all native.',
     },
     {
       title: 'Execution-neutral positioning',
-      body: 'Most platforms have bank relationships that create conflicts of interest. Quova is execution-neutral by design — we have no incentive to steer trades, which makes bank co-distribution partnerships possible.',
+      body: 'Most platforms have bank relationships that create conflicts of interest. Orbit is execution-neutral by design — we have no incentive to steer trades, which makes bank co-distribution partnerships possible.',
     },
   ]
 
@@ -288,14 +288,14 @@ function WhyCTA() {
   )
 }
 
-export default function WhyQuova() {
+export default function WhyOrbit() {
   return (
     <>
       <SEO
-        title="Why Quova"
-        path="/why-quova"
-        canonical="/why-quova"
-        description="Legacy FX platforms are 15+ years old with batch-first architecture. Quova is the modern, real-time alternative built for corporate treasury teams."
+        title="Why Orbit"
+        path="/why-orbit"
+        canonical="/why-orbit"
+        description="Legacy FX platforms are 15+ years old with batch-first architecture. Orbit is the modern, real-time alternative built for corporate treasury teams."
       />
       <PageHeader />
       <LegacyIncumbents />

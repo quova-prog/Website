@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = 'https://www.quovaos.com'
-const DEFAULT_TITLE = 'Quova — The Financial Risk OS'
+const SITE_URL = 'https://www.orbitfx.com'
+const DEFAULT_TITLE = 'Orbit — The Financial Risk OS'
 const DEFAULT_DESC =
-  'Quova — The Financial Risk OS for Enterprises. Replace fragmented, Excel-driven FX workflows with a purpose-built operating system.'
+  'Orbit — The Financial Risk OS for Enterprises. Replace fragmented, Excel-driven FX workflows with a purpose-built operating system.'
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`
 
 export default function SEO({
@@ -14,7 +14,7 @@ export default function SEO({
   image = DEFAULT_IMAGE,
   jsonLd,
 }) {
-  const fullTitle = title ? `${title} | Quova` : DEFAULT_TITLE
+  const fullTitle = title ? `${title} | Orbit` : DEFAULT_TITLE
   const url = `${SITE_URL}${path}`
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : url
 
@@ -49,16 +49,16 @@ export default function SEO({
 export const ORG_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Quova',
+  name: 'Orbit',
   url: SITE_URL,
-  logo: `${SITE_URL}/quova-icon.png`,
+  logo: `${SITE_URL}/orbit-icon.png`,
   description:
     'The Financial Risk Operating System for Enterprises. Purpose-built for corporate treasury teams managing FX, interest rate, commodity, and counterparty risk.',
   foundingDate: '2026',
   foundingLocation: { '@type': 'Place', name: 'Toronto, Canada' },
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'steve@quovaos.com',
+    email: 'steve@orbitfx.com',
     contactType: 'sales',
   },
   sameAs: [],
@@ -67,8 +67,8 @@ export const ORG_SCHEMA = {
 export const WEBSITE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Quova',
+  name: 'Orbit',
   url: SITE_URL,
   description: DEFAULT_DESC,
-  publisher: { '@type': 'Organization', name: 'Quova' },
+  publisher: { '@type': 'Organization', name: 'Orbit' },
 }

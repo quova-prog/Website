@@ -5,7 +5,7 @@ const CAPABILITIES = [
   {
     tag: 'Data Layer',
     title: 'Multi-ERP Exposure Aggregation',
-    body: `Quova connects to SAP, Oracle, NetSuite, and custom ERP instances simultaneously.
+    body: `Orbit connects to SAP, Oracle, NetSuite, and custom ERP instances simultaneously.
     Our data engineering layer handles intercompany elimination, entity consolidation,
     and lineage tracking — so you always know not just what the exposure is,
     but where it came from and how it was calculated.`,
@@ -36,7 +36,7 @@ const CAPABILITIES = [
     tag: 'Forecasting',
     title: 'Cash Flow Forecasting That Earns Trust',
     body: `The hardest part of FX hedging isn't the hedge — it's trusting the forecast
-    from the businesses. Quova tracks forecast-vs-actual variance by entity and BU,
+    from the businesses. Orbit tracks forecast-vs-actual variance by entity and BU,
     scores forecast reliability, and calibrates suggested hedge ratios accordingly.`,
     bullets: [
       'Forecast-vs-actual variance tracking by entity, BU, and currency',
@@ -66,7 +66,7 @@ const CAPABILITIES = [
     tag: 'Governance',
     title: 'Four-Eyes on Every Trade. Sits Alongside Your Stack.',
     body: `Enterprise treasury runs on separation of duties and layered approvals
-    — not on letting software press buttons. Quova is the intelligence and
+    — not on letting software press buttons. Orbit is the intelligence and
     documentation layer on top of the TMS, ERP, and bank relationships you
     already have.`,
     bullets: [
@@ -81,7 +81,7 @@ const CAPABILITIES = [
   {
     tag: 'Execution',
     title: 'Execution-Neutral Trade Infrastructure',
-    body: `Trade with any bank, any counterparty. Quova is not captive —
+    body: `Trade with any bank, any counterparty. Orbit is not captive —
     we do not require you to route trades through a specific institution.
     Full trade lifecycle support from pre-trade analytics through confirmation,
     settlement, and post-trade reconciliation.`,
@@ -106,7 +106,7 @@ function PageHeader() {
           The Financial Risk<br />Operating System
         </h1>
         <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
-          Trade execution is &lt;5% of the FX workflow. Quova automates the other 95% —
+          Trade execution is &lt;5% of the FX workflow. Orbit automates the other 95% —
           exposure aggregation, forecast variance, hedge accounting, approvals,
           and audit documentation. Six integrated modules. One live data model.
           Glass Box AI with human approval on every trade.
@@ -229,7 +229,7 @@ function CapabilityVisual({ tag }) {
         ))}
         <div className="mt-4 callout bg-orbit-teal/5 border-orbit-teal/30">
           <p className="text-orbit-teal text-xs">
-            Execution-neutral — Quova never restricts which institution you trade with.
+            Execution-neutral — Orbit never restricts which institution you trade with.
           </p>
         </div>
       </div>
@@ -373,7 +373,7 @@ function ProductCTA() {
       <div className="max-w-3xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">See it in your environment</h2>
         <p className="text-white/60 mb-8">
-          A 30-minute demo walks through how Quova connects to your ERP stack,
+          A 30-minute demo walks through how Orbit connects to your ERP stack,
           what your exposure graph looks like on day one, and the ROI case for
           your treasury team.
         </p>
@@ -391,7 +391,7 @@ export default function Product() {
       <SEO
         title="Platform"
         path="/product"
-        description="Quova's platform: multi-ERP exposure aggregation, streaming exposure graph, automated hedge accounting (ASC 815 / IFRS 9), and bank-neutral execution — all in one system."
+        description="Orbit's platform: multi-ERP exposure aggregation, streaming exposure graph, automated hedge accounting (ASC 815 / IFRS 9), and bank-neutral execution — all in one system."
       />
       <PageHeader />
       {CAPABILITIES.map((cap, i) => (

@@ -598,7 +598,7 @@ function BuiltForEnterprise() {
             <span className="text-orbit-teal">Not bolted on after the fact.</span>
           </h2>
           <p className="text-orbit-gray-mid text-lg leading-relaxed">
-            Quova was architected for the security, compliance, and integration
+            Orbit was architected for the security, compliance, and integration
             requirements of $1B–$40B enterprises — not retrofitted from a startup tool.
           </p>
         </div>
@@ -717,7 +717,7 @@ function AlongsideStack() {
             <span className="text-orbit-teal">Layers on your ERPs.</span>
           </h2>
           <p className="text-orbit-gray-mid text-lg leading-relaxed">
-            Quova doesn't replace your TMS or ERP. It's the intelligence and
+            Orbit doesn't replace your TMS or ERP. It's the intelligence and
             documentation layer on top — so the systems you already paid for
             finally talk to each other.
           </p>
@@ -812,7 +812,7 @@ function Team() {
     {
       name: 'Mingze Deng',
       title: 'CPO & Co-Founder',
-      bio: 'Architect of Quova\'s platform vision. Expert in data-intensive fintech infrastructure.',
+      bio: 'Architect of Orbit\'s platform vision. Expert in data-intensive fintech infrastructure.',
     },
     {
       name: 'Jim McCrindle',
@@ -949,7 +949,7 @@ function DashboardMockup() {
         <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
         <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
         <div className="ml-3 flex-1 bg-white/5 rounded px-3 py-1 text-xs text-white/30">
-          app.quovaos.com / exposures
+          app.orbitfx.com / exposures
         </div>
       </div>
 
@@ -1023,7 +1023,7 @@ export default function Home() {
     <>
       <SEO
         path="/"
-        description="Quova is the Financial Risk Operating System for enterprises. Replace fragmented, Excel-driven FX workflows with a purpose-built platform for corporate treasury."
+        description="Orbit is the Financial Risk Operating System for enterprises. Replace fragmented, Excel-driven FX workflows with a purpose-built platform for corporate treasury."
         jsonLd={[ORG_SCHEMA, WEBSITE_SCHEMA]}
       />
       <Hero />

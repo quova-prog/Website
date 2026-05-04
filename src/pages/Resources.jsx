@@ -67,7 +67,7 @@ export default function Resources() {
       <SEO
         title="Resources"
         path="/resources"
-        description="FX intelligence and thought leadership from Quova. Insights on corporate treasury, FX risk management, hedge accounting, and the infrastructure gap."
+        description="FX intelligence and thought leadership from Orbit. Insights on corporate treasury, FX risk management, hedge accounting, and the infrastructure gap."
       />
       <PageHeader />
       <section className="py-20 bg-white">
@@ -92,7 +92,7 @@ export default function Resources() {
             FX headwinds hitting your portfolio companies?
           </h2>
           <p className="text-orbit-gray-mid text-sm mb-6">
-            Quova monitors S&P and TSX earnings calls for FX-related commentary.
+            Orbit monitors S&P and TSX earnings calls for FX-related commentary.
             Subscribe for weekly intelligence.
           </p>
           <div className="flex gap-3">

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import OrbitLogo from './OrbitLogo'
 
 const DEFAULT_LINKS = [
   { label: 'Product',     href: '/product' },
-  { label: 'Why Quova',   href: '/why-quova' },
+  { label: 'Why Orbit',   href: '/why-orbit' },
   { label: 'FX Diagnostic', href: '/diagnostic' },
   { label: 'Resources',   href: '/resources' },
   { label: 'About',       href: '/about' },
@@ -33,11 +34,8 @@ export default function Nav({ links }) {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <img src="/quova-icon.png" alt="Quova" className="w-14 h-14" />
-          <span className="text-white font-bold text-xl tracking-wide uppercase">
-            Quova
-          </span>
+        <Link to="/" className="flex items-center group">
+          <OrbitLogo size={36} />
         </Link>
 
         {/* Desktop nav */}
@@ -58,7 +56,7 @@ export default function Nav({ links }) {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://app.quovaos.com/login"
+            href="https://app.orbitfx.com/login"
             className="px-5 py-2 rounded-full border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors"
           >
             Login
@@ -92,7 +90,7 @@ export default function Nav({ links }) {
             </Link>
           ))}
           <a
-            href="https://app.quovaos.com/login"
+            href="https://app.orbitfx.com/login"
             className="mt-2 py-2 rounded-full border border-white/30 text-white text-center text-sm font-medium hover:bg-white/10 transition-colors"
           >
             Login

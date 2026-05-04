@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import OrbitLogo from './components/OrbitLogo'
 import Home from './pages/Home'
 import Product from './pages/Product'
-import WhyQuova from './pages/WhyQuova'
+import WhyOrbit from './pages/WhyOrbit'
 import FXDiagnostic from './pages/FXDiagnostic'
 import Resources from './pages/Resources'
 import BlogPost from './pages/BlogPost'
@@ -34,7 +35,9 @@ function PasswordGate({ children }) {
   return (
     <div className="min-h-screen bg-orbit-navy flex items-center justify-center px-6">
       <div className="max-w-sm w-full text-center">
-        <img src="/quova-icon.png" alt="Quova" className="w-16 h-16 mx-auto mb-6" />
+        <div className="flex justify-center mb-6">
+          <OrbitLogo size={64} iconOnly />
+        </div>
         <h1 className="text-2xl font-bold text-white mb-2">This site is private</h1>
         <p className="text-white/50 text-sm mb-8">Enter the access code to continue.</p>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -78,7 +81,7 @@ const DIAGNOSTIC_ROUTES = ['/diagnostic', '/fx-diagnostic']
 
 const DIAGNOSTIC_NAV_LINKS = [
   { label: 'Product',    href: '/product' },
-  { label: 'Why Quova',  href: '/why-quova' },
+  { label: 'Why Orbit',  href: '/why-orbit' },
   { label: 'Resources',  href: '/resources' },
   { label: 'About',      href: '/about' },
 ]
@@ -106,8 +109,8 @@ function Layout() {
         <Routes>
           <Route path="/"            element={<Home />} />
           <Route path="/product"     element={<Product />} />
-          <Route path="/why-quova"   element={<WhyQuova />} />
-          <Route path="/why-orbit"   element={<WhyQuova />} />
+          <Route path="/why-orbit"   element={<WhyOrbit />} />
+          <Route path="/why-quova"   element={<Navigate to="/why-orbit" replace />} />
           <Route path="/resources"   element={<Resources />} />
           <Route path="/resources/:slug" element={<BlogPost />} />
           <Route path="/about"       element={<About />} />

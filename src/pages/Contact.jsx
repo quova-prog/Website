@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SEO from '../components/SEO'
 
-const DEMO_CALENDLY_URL = 'https://calendly.com/quovaos/demo' // Replace with live URL
+const DEMO_CALENDLY_URL = 'https://calendly.com/orbitfx/demo' // Replace with live URL
 const FORMSPREE_URL = 'https://formspree.io/f/mbdpvlzb'
 
 function PageHeader() {
@@ -12,11 +12,11 @@ function PageHeader() {
       <div className="relative max-w-7xl mx-auto px-6">
         <p className="section-label text-orbit-teal mb-4">Book a Demo</p>
         <h1 className="text-5xl font-black text-white mb-5" style={{ letterSpacing: '-0.03em' }}>
-          See Quova in your environment
+          See Orbit in your environment
         </h1>
         <p className="text-white/60 text-xl max-w-xl">
           30 minutes. We walk through your ERP stack, model your exposure profile,
-          and show exactly where Quova fits.
+          and show exactly where Orbit fits.
         </p>
       </div>
     </div>
@@ -46,7 +46,7 @@ function DemoSection() {
       if (!res.ok) throw new Error('Request failed')
       setSubmitted(true)
     } catch {
-      setError('Something went wrong. Please email steve@quovaos.com directly.')
+      setError('Something went wrong. Please email steve@orbitfx.com directly.')
     } finally {
       setSubmitting(false)
     }
@@ -208,7 +208,7 @@ function DemoSection() {
               {
                 n: '02',
                 title: 'Live exposure graph (10 min)',
-                body: 'We show what your consolidated exposure view would look like in Quova — using your currency pairs, entities, and hedging structure.',
+                body: 'We show what your consolidated exposure view would look like in Orbit — using your currency pairs, entities, and hedging structure.',
               },
               {
                 n: '03',
@@ -256,9 +256,9 @@ function DemoSection() {
           {/* Direct contact */}
           <div className="mt-8 pt-8 border-t border-gray-100">
             <p className="text-sm font-semibold text-orbit-navy mb-1">Direct contact</p>
-            <a href="mailto:steve@quovaos.com"
+            <a href="mailto:steve@orbitfx.com"
               className="text-orbit-teal text-sm hover:underline">
-              steve@quovaos.com
+              steve@orbitfx.com
             </a>
             <p className="text-orbit-gray text-xs mt-1">CEO · Steve LaBella · Toronto, Canada</p>
           </div>
@@ -282,7 +282,7 @@ export default function Contact() {
       <SEO
         title="Book a Demo"
         path="/contact"
-        description="See Quova in your environment. Book a 30-minute demo — we'll map your ERP stack, model your exposure profile, and show exactly where Quova fits."
+        description="See Orbit in your environment. Book a 30-minute demo — we'll map your ERP stack, model your exposure profile, and show exactly where Orbit fits."
       />
       <PageHeader />
       <DemoSection />

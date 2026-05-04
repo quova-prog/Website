@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import OrbitLogo from './OrbitLogo'
 
 const NAV = [
   { label: 'Product',       href: '/product' },
-  { label: 'Why Quova',     href: '/why-quova' },
+  { label: 'Why Orbit',     href: '/why-orbit' },
   { label: 'FX Diagnostic', href: '/diagnostic' },
   { label: 'Resources',     href: '/resources' },
   { label: 'About',         href: '/about' },
@@ -16,9 +17,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <img src="/quova-icon.png" alt="Quova" className="w-6 h-6" />
-              <span className="font-bold text-lg tracking-wide uppercase">Quova</span>
+            <div className="mb-4">
+              <OrbitLogo size={28} />
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               The Financial Risk OS for enterprises.
@@ -59,8 +59,8 @@ export default function Footer() {
                 <Link to="/contact" className="hover:text-orbit-teal transition-colors">Contact</Link>
               </li>
               <li>
-                <a href="mailto:steve@quovaos.com" className="hover:text-orbit-teal transition-colors">
-                  steve@quovaos.com
+                <a href="mailto:steve@orbitfx.com" className="hover:text-orbit-teal transition-colors">
+                  steve@orbitfx.com
                 </a>
               </li>
               <li className="text-white/40">Toronto, Canada</li>
@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-xs">
-            © {new Date().getFullYear()} Quova. All rights reserved.
+            © {new Date().getFullYear()} Orbit. All rights reserved.
           </p>
           <p className="text-white/30 text-xs">
             FX risk is the #1 financial exposure cited by CFOs globally.{' '}

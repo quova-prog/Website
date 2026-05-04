@@ -167,7 +167,7 @@ function IntroScreen({ onStart }) {
           Start the Diagnostic →
         </button>
       </div>
-      <p className="text-xs" style={{ color: '#475569' }}>Powered by Quova · For corporate treasury teams</p>
+      <p className="text-xs" style={{ color: '#475569' }}>Powered by Orbit · For corporate treasury teams</p>
     </div>
   )
 }
@@ -423,7 +423,7 @@ function ResultsScreen({ results, answers }) {
           <div className="mb-8 p-5 rounded-xl text-center"
             style={{ background: 'rgba(0,194,168,0.08)', border: '1px solid rgba(0,194,168,0.25)' }}>
             <span className="font-semibold" style={{ color: TEAL }}>✓ Saved.</span>
-            <span className="text-sm ml-2" style={{ color: '#CBD5E1' }}>A Quova team member will follow up shortly.</span>
+            <span className="text-sm ml-2" style={{ color: '#CBD5E1' }}>An Orbit team member will follow up shortly.</span>
           </div>
         )}
 
@@ -433,7 +433,7 @@ function ResultsScreen({ results, answers }) {
         <div className="text-center">
           <h3 className="text-xl font-black text-white mb-3">Want to see your precise number?</h3>
           <p className="text-sm mb-7 max-w-xs mx-auto" style={{ color: '#64748B' }}>
-            Connect your actual ERP data and Quova will show you exactly where your FX program is losing value — and how to close the gap.
+            Connect your actual ERP data and Orbit will show you exactly where your FX program is losing value — and how to close the gap.
           </p>
           <a href="/contact"
             className="inline-block px-8 py-4 rounded-xl font-bold text-base transition-all duration-150 active:scale-95"
@@ -446,7 +446,7 @@ function ResultsScreen({ results, answers }) {
         </div>
 
         <p className="text-center text-xs mt-12" style={{ color: '#334155' }}>
-          Powered by Quova · For corporate treasury teams
+          Powered by Orbit · For corporate treasury teams
         </p>
       </div>
     </div>

@@ -81,10 +81,10 @@ export default function BlogPost() {
         {/* CTA */}
         <div className="mt-16 bg-orbit-navy rounded-2xl p-8 text-center">
           <h3 className="text-white font-bold text-xl mb-3">
-            See how Quova addresses this in practice
+            See how Orbit addresses this in practice
           </h3>
           <p className="text-white/60 text-sm mb-6">
-            Book a 30-minute demo and we'll walk through how Quova applies to
+            Book a 30-minute demo and we'll walk through how Orbit applies to
             your specific ERP stack and exposure profile.
           </p>
           <Link to="/contact" className="btn-primary px-8 py-3">Book a Demo →</Link>
@@ -93,7 +93,7 @@ export default function BlogPost() {
         {/* Other posts */}
         {others.length > 0 && (
           <div className="mt-16">
-            <p className="section-label mb-6">More from Quova</p>
+            <p className="section-label mb-6">More from Orbit</p>
             <div className="grid md:grid-cols-2 gap-5">
               {others.map(p => (
                 <Link

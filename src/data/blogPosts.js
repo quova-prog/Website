@@ -34,9 +34,9 @@ export const posts = [
   },
   {
     slug: 'bank-partner-co-distribution-model',
-    title: 'The Bank Partner Channel: How Quova Reaches Enterprise Treasury at Scale',
+    title: 'The Bank Partner Channel: How Orbit Reaches Enterprise Treasury at Scale',
     excerpt:
-      'Corporate FX relationship managers already have the trust. Quova gives them the intelligence layer. Here\'s how co-distribution works and why it changes the unit economics.',
+      'Corporate FX relationship managers already have the trust. Orbit gives them the intelligence layer. Here\'s how co-distribution works and why it changes the unit economics.',
     date: 'December 2025',
     readTime: '5 min read',
     category: 'Go-to-Market',
